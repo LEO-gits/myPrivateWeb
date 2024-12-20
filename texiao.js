@@ -27,11 +27,9 @@ document.getElementById('captcha-form').addEventListener('submit', (e) => {
     const message = document.getElementById('message');
 
     if (userInput === captchaText) {
-        message.textContent = '验证成功！恭喜您完成人机测试';
+        message.textContent = '两秒后返回主页面';
         message.style.color = 'green';
-        message.textContent = '验证成功！';
-        message.style.color = 'green';
-        alert('2秒后返回主页面！');
+        alert('恭喜您完成人机验证');
         setTimeout(() => {
             window.location.href = 'index.html'; // 跳转到 index.html
         }, 2000); // 等待 1.5 秒后跳转
