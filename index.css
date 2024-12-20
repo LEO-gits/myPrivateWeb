@@ -1,0 +1,288 @@
+/* General Reset */
+* {
+    margin: 0; /* 去除所有元素的外边距 */
+    padding: 0; /* 去除所有元素的内边距 */
+    box-sizing: border-box; /* 设置所有元素的 box-sizing 为 border-box，以便更容易计算宽度和高度 */
+}
+
+/* 设置header内导航栏的布局 */
+header {
+    position: fixed; /* 固定在页面顶部 */
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #333; /* 背景颜色 */
+    color: white; /* 文字颜色 */
+    padding: 1rem 2rem; /* 内边距 */
+    z-index: 1000; /* 确保导航栏在其他元素之上 */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* 给导航栏添加阴影效果 */
+    display: flex; /* 使用flex布局 */
+    justify-content: space-between; /* 左右两边分开 */
+    align-items: center; /* 垂直居中对齐 */
+}
+
+/* 设置header中的logo样式 */
+header .logo h1 {
+    margin: 0; /* 去除标题的外边距 */
+}
+
+/* 设置导航栏的链接列表 */
+header .nav-links {
+    list-style: none; /* 去除列表项的默认样式 */
+    display: flex; /* 使用flex布局排列导航项 */
+    gap: 20px; /* 导航项之间的间距 */
+    margin-left: auto; /* 使导航项向右对齐 */
+}
+
+/* 设置导航项的样式 */
+header .nav-links li {
+    margin: 0 15px; /* 每个导航项左右有间距 */
+}
+
+/* 设置导航链接的样式 */
+header.nav-links a {
+    color: rgb(184, 156, 251); /* 链接颜色为指定颜色 */
+    text-decoration: none; /* 去除文本装饰 */
+    transition: all 0.3s ease; /* 添加过渡效果 */
+}
+
+
+header.nav-links a:active {
+    color: rgb(0, 0, 0); /* 点击时颜色变为黑色，可按需调整 */
+    transform: translateY(2px); /* 点击时向下移动2像素，营造按下的感觉 */
+}
+
+header.nav-links a:visited {
+    color: rgb(253, 242, 128); /* 已访问链接颜色变为灰色，可调整 */
+}
+
+
+
+
+body {
+    padding-top: 70px; /* 给页面主体内容留出空间，以免被固定的导航栏遮挡 */
+}
+
+/* 设置页面主体字体 */
+body {
+    font-family: 'Arial', sans-serif; /* 设置全站字体为 Arial */
+    line-height: 1.6; /* 设置行高，增加行间距，使文字更易阅读 */
+}
+
+
+
+.hero {
+    height: 100vh; /* 设置英雄区的高度为视口高度 */
+    background: linear-gradient(to right, #4facfe, #00f2fe); /* 渐变背景，从左到右由蓝色到绿色 */
+    color: white; /* 文字颜色为白色 */
+    display: flex; /* 使用 flex 布局 */
+    align-items: center; /* 垂直居中对齐 */
+    justify-content: center; /* 水平居中对齐 */
+    text-align: center; /* 文字居中 */
+}
+
+.hero h1 {
+    font-size: 3rem; /* 设置标题的字体大小 */
+}
+
+/* 按钮样式 */
+.hero .button {
+    background: rgb(255, 255, 255); /* 按钮背景色为白色 */
+    color: #333; /* 按钮文字颜色为深灰色 */
+    padding: 10px 20px; /* 内边距 */
+    text-decoration: none; /* 去除文本装饰 */
+    margin-top: 20px; /* 上边距 */
+    border-radius: 5px; /* 边角圆润 */
+    font-size: 1rem; /* 字体大小 */
+    display: inline-block; /* 使按钮成为内联块元素 */
+    transition: all 0.3s ease; /* 添加平滑过渡效果 */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* 给按钮添加阴影 */
+}
+
+/* 按钮的悬停效果 */
+.hero .button:hover {
+    background: #4facfe; /* 鼠标悬停时，背景色变化为渐变的第一个色 */
+    color: white; /* 鼠标悬停时，文字变为白色 */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* 悬停时阴影效果加深 */
+}
+
+/* 按钮的点击效果 */
+.hero .button:active {
+    background: #00f2fe; /* 点击时，背景色变化为渐变的第二个色 */
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1); /* 点击时阴影变小 */
+}
+
+#about, #projects, #contact {
+    padding: 2rem; /* 为这些部分添加内边距 */
+    text-align: center; /* 文字居中 */
+}
+
+#home {
+    padding: 2rem; /* 为首页添加内边距 */
+    text-align: center; /* 文字居中 */
+    background-image: url('未来感.jpg'); /* 替换为你的背景图片路径 */
+    background-size: cover; /* 背景图片覆盖整个区域 */
+    background-position: center; /* 背景图片居中显示 */
+    background-attachment: fixed; /* 背景图片固定（不随滚动） */
+}
+
+/* 给 #about 中的图片加上圆角 */
+#about img {
+    width: 200px; /* 图片宽度为200px */
+    border-radius: 50%; /* 圆形头像 */
+    margin-top: 20px; /* 上边距 */
+}
+
+/* 为 #projects 部分添加背景图片 */
+#projects {
+    background-image: url('红色主题ppt背景.jpg'); /* 背景图片路径 */
+    background-size: cover; /* 背景图片覆盖整个 section */
+    background-position: center; /* 背景图片居中显示 */
+    padding: 2rem; /* 内边距 */
+    text-align: center; /* 文字居中 */
+    color: rgb(0, 0, 0); /* 文字颜色为黑色 */
+}
+
+/* 项目列表的布局 */
+.project-list {
+    display: flex; /* 使用 flex 布局 */
+    justify-content: space-around; /* 项目之间均匀分布 */
+    flex-wrap: wrap; /* 允许换行 */
+}
+
+/* 项目项的样式 */
+.project-item {
+    width: 30%; /* 每个项目项的宽度为 30% */
+    margin: 20px 0; /* 上下间距 */
+    background: rgba(255, 255, 255, 0.8); /* 半透明背景 */
+    padding: 1rem; /* 内边距 */
+    border-radius: 5px; /* 圆角 */
+    text-align: center; /* 文字居中 */
+}
+
+/* 项目项中的图片样式 */
+.project-item img {
+    max-width: 150px; /* 图片最大宽度为 150px */
+    max-height: 100px; /* 图片最大高度为 100px */
+}
+
+/* 页脚样式 */
+footer {
+    background: #333; /* 背景色为深灰色 */
+    color: white; /* 文字颜色为白色 */
+    text-align: center; /* 文字居中 */
+    padding: 1rem; /* 内边距 */
+    margin-top: 20px; /* 上边距 */
+}
+
+/* 联系我部分样式 */
+#contact {
+    padding: 2rem; /* 内边距 */
+    text-align: center; /* 文字居中 */
+    display: flex; /* 使用 flex 布局 */
+    flex-direction: column; /* 纵向排列表单元素 */
+    align-items: center; /* 水平居中对齐 */
+    justify-content: center; /* 垂直居中对齐 */
+    min-height: 50vh; /* 设置最小高度为 50% 的视口高度 */
+    background-color: #f4f4f4; /* 背景色为浅灰色 */
+    border-radius: 10px; /* 圆角 */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* 阴影效果 */
+}
+
+/* 联系我部分标题的样式 */
+#contact h2 {
+    font-size: 2rem; /* 字体大小 */
+    margin-bottom: 1rem; /* 标题与表单之间的间距 */
+}
+
+/* 联系我部分表单样式 */
+#contact form {
+    display: flex; /* 使用 flex 布局 */
+    flex-direction: column; /* 纵向排列表单元素 */
+    gap: 15px; /* 表单字段之间的间距 */
+    max-width: 500px; /* 限制表单最大宽度 */
+    width: 100%; /* 表单宽度为 100% */
+}
+
+/* 输入框和文本区域的样式 */
+#contact input, #contact textarea {
+    padding: 10px; /* 内边距 */
+    font-size: 1rem; /* 字体大小 */
+    border: 1px solid #ddd; /* 边框 */
+    border-radius: 5px; /* 圆角 */
+    width: 100%; /* 宽度为100% */
+    box-sizing: border-box; /* 包括内边距和边框 */
+}
+
+/* 联系我按钮的样式 */
+#contact button {
+    padding: 10px 20px; /* 内边距 */
+    background-color: #4facfe; /* 背景色 */
+    color: white; /* 文字颜色 */
+    font-size: 1rem; /* 字体大小 */
+    border: none; /* 去除边框 */
+    border-radius: 5px; /* 圆角 */
+    cursor: pointer; /* 鼠标悬停时显示手型指针 */
+    transition: background-color 0.3s; /* 按钮背景色的过渡效果 */
+}
+
+/* 按钮悬停时的样式 */
+#contact button:hover {
+    background-color: #00f2fe; /* 鼠标悬停时背景色变化 */
+}
+
+
+/* 优化导航栏标题字体 */
+header .logo h1 {
+    font-family: 'Brush Script MT', cursive; /* 使用艺术字体 */
+    font-size: 2.5rem; /* 增大字体 */
+    color: #FFD700; /* 金黄色 */
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5); /* 添加阴影效果 */
+}
+
+/* 优化导航链接字体 */
+header .nav-links a {
+    font-family: 'Lucida Handwriting', cursive; /* 使用手写风格字体 */
+    font-size: 1.2rem; /* 增大字体 */
+    color: #00FF7F; /* 绿色 */
+    text-decoration: none; /* 去除下划线 */
+    transition: all 0.3s ease; /* 平滑过渡效果 */
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3); /* 添加文字阴影 */
+}
+
+header .nav-links a:hover {
+    color: #FF69B4; /* 鼠标悬停时文字颜色变为粉红色 */
+    text-shadow: 2px 2px 5px rgba(255, 105, 180, 0.5); /* 增加阴影效果 */
+    transform: scale(1.1); /* 鼠标悬停时放大 */
+}
+
+header .nav-links a:active {
+    color: #FF4500; /* 点击时颜色变为橙红色 */
+    transform: translateY(2px); /* 点击时向下移动 2 像素 */
+}
+
+html {
+    scroll-behavior: smooth; /* 启用平滑滚动 */
+}
+
+/* 回到顶部按钮样式 */
+#back-to-top {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    display: none; /* 初始隐藏按钮 */
+    padding: 10px 15px;
+    font-size: 16px;
+    background-color: #28a745; /* 绿色背景 */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* 添加阴影 */
+    transition: all 0.3s ease;
+}
+
+#back-to-top:hover {
+    background-color: #218838; /* 悬停时背景加深 */
+    transform: scale(1.1); /* 悬停时放大 */
+}

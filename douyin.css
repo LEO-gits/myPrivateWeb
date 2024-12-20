@@ -1,0 +1,144 @@
+/* 通用样式 */
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: "Microsoft YaHei", Arial, sans-serif;
+    /* 使用rgba设置黑色且带有透明度，这里的透明度值（A）设为 0.5，你可以按需调整，0为完全透明，1为完全不透明 */
+    background: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    overflow-x: hidden; /* 禁止横向滚动 */
+    overflow-y: auto; /* 启用纵向滚动 */
+}
+
+/* 容器 */
+.container {
+    text-align: center;
+    position: relative;
+    min-height: 100vh;
+    overflow: hidden;
+}
+
+/* 背景 */
+.background {
+    position: fixed; /* 背景固定显示 */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('DYbackground.jpg') no-repeat center center/cover;
+    z-index: -1;
+    opacity: 0.9;
+}
+
+/* 标题部分 */
+header {
+    margin-top: 50px;
+    color: #FFD700;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.8);
+}
+
+header h1 {
+    font-size: 3.5rem;
+    margin: 0;
+    line-height: 1.2;
+    color: #FFD700;
+    text-shadow: 0 0 5px #FFD700, 0 0 10px #FF4500, 0 0 20px #FF4500, 0 0 30px #FF6347, 0 0 40px #FF6347;
+}
+
+
+header p {
+    font-size: 1.5rem;
+    margin: 10px 0 20px;
+    color: #FFD700;
+}
+
+/* 视频部分 */
+.video-section {
+    display: flex;
+    flex-direction: column; /* 垂直排列 */
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    margin: 50px auto;
+    max-width: 1200px;
+}
+
+.video-container {
+    width: 300px;
+    border: 2px solid #FFD700;
+    border-radius: 15px;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.video-container:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 20px rgba(255, 215, 0, 0.5);
+}
+
+video {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 15px;
+}
+
+/* 页脚部分 */
+footer {
+    margin-top: 50px;
+    padding: 20px;
+    font-size: 1rem;
+    color: #aaa;
+    text-align: center;
+}
+
+.img-centered {
+    width: 200px; /* 设置图片宽度为200px，可按需调整 */
+    height: 300px; /* 设置图片宽度为200px，可按需调整 */
+    display: block; /* 将图片设置为块级元素，便于进行居中对齐等操作 */
+    margin: 0 auto; /* 利用自动外边距实现水平居中，对于块级元素有效 */
+}
+
+/* 星星坠落动画 */
+@keyframes fall {
+    0% {
+        transform: translateY(-100%);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(200vh);
+        opacity: 0;
+    }
+}
+
+.star {
+    position: absolute;
+    top: 0;
+    width: 4px;
+    height: 4px;
+    background: #FFD700;
+    border-radius: 50%;
+    animation: fall 5s linear infinite;
+    opacity: 0;
+}
+
+
+.return-button {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 1rem;
+    color: #FFD700;
+    text-decoration: none;
+    border: 2px solid #FFD700;
+    border-radius: 5px;
+    background: rgba(0, 0, 0, 0.5);
+    transition: all 0.3s ease;
+}
+
+.return-button:hover {
+    color: #000;
+    background: #FFD700;
+    border-color: #FF4500;
+    box-shadow: 0 0 10px #FF4500;
+}

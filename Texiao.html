@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>验证码验证</title>
+    <link rel="stylesheet" href="Texiao.css">
+</head>
+<body>
+    <div class="background"></div>
+    <div class="captcha-container">
+        <h2>请输入验证码</h2>
+        <form id="captcha-form">
+            <div class="captcha-row">
+                <canvas id="captcha-canvas" width="120" height="40"></canvas>
+                <button type="button" id="refresh-captcha">刷新验证码</button>
+            </div>
+            <input type="text" id="captcha-input" placeholder="输入验证码" maxlength="6">
+            <button type="submit" class="submit-btn">提交</button>
+        </form>
+        <div id="message"></div>
+    </div>
+
+    <script src="texiao.js"></script>
+</body>
+</html>

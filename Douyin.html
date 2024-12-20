@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="zh">
+    <a href="index.html" class="return-button">返回首页</a>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>我的跨年晚会</title>
+    <link rel="stylesheet" href="douyin.css">
+</head>
+<body>
+    <div class="container">
+        <!-- 背景 -->
+        <div class="background"></div>
+
+        <!-- 标题 -->
+        <header>
+            <h1>❤欢迎添加我的抖音❤</h1>
+            <img src="DY.jpg" alt="抖音好友码" class="img-centered">
+        </header>
+
+        <!-- 视频播放 -->
+        <div class="video-section">
+            <!-- 视频1 -->
+            <div class="video-container">
+                <a href="https://v.douyin.com/iUmfcrQG/" target="_blank">
+                    <video controls>
+                        <source src="视频1.mp4" type="video/mp4">
+                        您的浏览器不支持视频播放，请升级。
+                    </video>
+                </a>
+            </div>
+
+            <!-- 视频2 -->
+            <div class="video-container">
+                <a href="https://v.douyin.com/iUmP9265/" target="_blank">
+                    <video controls>
+                        <source src="视频2.mp4" type="video/mp4">
+                        您的浏览器不支持视频播放，请升级。
+                    </video>
+                </a>
+            </div>
+        </div>
+    </div>
+    <script>
+        function createStar() {
+            const star = document.createElement('div');
+            star.className = 'star';
+            // 随机设置星星的横向位置
+            star.style.left = Math.random() * 100 + 'vw';
+            // 随机动画持续时间
+            star.style.animationDuration = Math.random() * 3 + 2 + 's';
+            // 设置初始透明度
+            star.style.opacity = Math.random();
+            document.body.appendChild(star);
+    
+            // 清除落地的星星
+            setTimeout(() => {
+                star.remove();
+            }, 5000);
+        }
+    
+        // 定时生成星星
+        setInterval(createStar, 200);
+    </script>
+    
+    <a href="index.html" class="return-button">返回首页</a>
+</body>
+</html>
