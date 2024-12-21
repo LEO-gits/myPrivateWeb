@@ -5,55 +5,93 @@
     box-sizing: border-box; /* 设置所有元素的 box-sizing 为 border-box，以便更容易计算宽度和高度 */
 }
 
-/* 设置header内导航栏的布局 */
+/* Header Styling */
 header {
-    position: fixed; /* 固定在页面顶部 */
+    position: fixed; /* 固定在顶部 */
     top: 0;
     left: 0;
     width: 100%;
-    background-color: #333; /* 背景颜色 */
-    color: white; /* 文字颜色 */
-    padding: 1rem 2rem; /* 内边距 */
+    background-color: #333; /* 深灰色背景 */
+    color: white; /* 白色文字 */
+    padding: 1rem 2rem; /* 上下内边距1rem，左右2rem */
     z-index: 1000; /* 确保导航栏在其他元素之上 */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* 给导航栏添加阴影效果 */
-    display: flex; /* 使用flex布局 */
-    justify-content: space-between; /* 左右两边分开 */
-    align-items: center; /* 垂直居中对齐 */
+    display: flex; /* 使用 Flex 布局 */
+    justify-content: space-between; /* 两边内容分开 */
+    align-items: center; /* 垂直居中 */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* 添加轻微阴影 */
+    transition: background-color 0.3s ease; /* 背景色过渡效果 */
 }
 
-/* 设置header中的logo样式 */
+/* Logo Styling */
 header .logo h1 {
-    margin: 0; /* 去除标题的外边距 */
+    font-family: 'Brush Script MT', cursive; /* 艺术字体 */
+    font-size: 2.5rem; /* 字体大小 */
+    color: #FFD700; /* 金黄色 */
+    margin: 0; /* 去掉默认外边距 */
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5); /* 添加阴影 */
 }
 
-/* 设置导航栏的链接列表 */
+/* Navigation Links Styling */
 header .nav-links {
-    list-style: none; /* 去除列表项的默认样式 */
-    display: flex; /* 使用flex布局排列导航项 */
-    gap: 20px; /* 导航项之间的间距 */
-    margin-left: auto; /* 使导航项向右对齐 */
+    list-style: none; /* 去掉列表默认样式 */
+    display: flex; /* 使用 Flex 排列导航项 */
+    gap: 20px; /* 导航项间距 */
 }
 
-/* 设置导航项的样式 */
-header .nav-links li {
-    margin: 0 15px; /* 每个导航项左右有间距 */
-}
-
-/* 设置导航链接的样式 */
-header.nav-links a {
-    color: rgb(184, 156, 251); /* 链接颜色为指定颜色 */
-    text-decoration: none; /* 去除文本装饰 */
+/* Individual Link Styling */
+header .nav-links a {
+    font-family: 'Lucida Handwriting', cursive; /* 手写风格字体 */
+    font-size: 1.2rem; /* 字体大小 */
+    color: #00FF7F; /* 绿色文字 */
+    text-decoration: none; /* 去掉下划线 */
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3); /* 添加文字阴影 */
     transition: all 0.3s ease; /* 添加过渡效果 */
 }
 
-
-header.nav-links a:active {
-    color: rgb(0, 0, 0); /* 点击时颜色变为黑色，可按需调整 */
-    transform: translateY(2px); /* 点击时向下移动2像素，营造按下的感觉 */
+/* Hover Effect for Links */
+header .nav-links a:hover {
+    color: #FF69B4; /* 悬停时变为粉色 */
+    transform: scale(1.1); /* 悬停时放大 */
+    text-shadow: 2px 2px 5px rgba(255, 105, 180, 0.5); /* 增加文字阴影 */
 }
 
-header.nav-links a:visited {
-    color: rgb(253, 242, 128); /* 已访问链接颜色变为灰色，可调整 */
+/* Active Link State */
+header .nav-links a:active {
+    color: #FF4500; /* 点击时变为橙色 */
+    transform: translateY(2px); /* 按下时下移2像素 */
+}
+
+/* Responsive Menu (Optional) */
+@media (max-width: 768px) {
+    header .nav-links {
+        display: none; /* 初始隐藏导航项 */
+        flex-direction: column; /* 垂直排列 */
+        background-color: #333; /* 背景色 */
+        position: absolute; /* 绝对定位 */
+        top: 100%; /* 位于导航栏下方 */
+        right: 0;
+        width: 100%; /* 占满宽度 */
+        padding: 1rem;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* 添加阴影 */
+    }
+
+    header .nav-links.show {
+        display: flex; /* 显示导航项 */
+    }
+
+    header .menu-toggle {
+        display: block; /* 显示菜单按钮 */
+        cursor: pointer;
+    }
+
+    header .menu-toggle span {
+        display: block;
+        width: 25px;
+        height: 3px;
+        background-color: white;
+        margin: 5px 0;
+        transition: all 0.3s ease;
+    }
 }
 
 
@@ -262,7 +300,11 @@ header .nav-links a:active {
 }
 
 html {
-    scroll-behavior: smooth; /* 启用平滑滚动 */
+    scroll-behavior: smooth;
+}
+
+@supports not (scroll-behavior: smooth) {
+    /* 如果不支持平滑滚动，可以使用 JavaScript 实现 */
 }
 
 /* 回到顶部按钮样式 */
