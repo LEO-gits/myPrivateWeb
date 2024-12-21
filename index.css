@@ -96,7 +96,6 @@ header .nav-links a:active {
 
 
 
-
 body {
     padding-top: 70px; /* 给页面主体内容留出空间，以免被固定的导航栏遮挡 */
 }
@@ -300,11 +299,7 @@ header .nav-links a:active {
 }
 
 html {
-    scroll-behavior: smooth;
-}
-
-@supports not (scroll-behavior: smooth) {
-    /* 如果不支持平滑滚动，可以使用 JavaScript 实现 */
+    scroll-behavior: smooth; /* 启用平滑滚动 */
 }
 
 /* 回到顶部按钮样式 */
@@ -327,4 +322,26 @@ html {
 #back-to-top:hover {
     background-color: #218838; /* 悬停时背景加深 */
     transform: scale(1.1); /* 悬停时放大 */
+}
+
+
+.star {
+    position: absolute;
+    top: -10px; /* 初始位置在屏幕顶部外 */
+    width: 10px; /* 星星的宽度 */
+    height: 10px; /* 星星的高度 */
+    background: rgb(243, 243, 2); /* 星星颜色 */
+    border-radius: 50%; /* 圆形星星 */
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.8); /* 添加星星的发光效果 */
+    animation: fall linear; /* 关联 CSS 动画 */
+}
+
+@keyframes fall {
+    to {
+        transform: translateY(100vh); /* 从顶部下落到屏幕底部 */
+
+    }
+}
+.star {
+    z-index: 1000; /* 确保星星位于页面其他内容之上 */
 }
