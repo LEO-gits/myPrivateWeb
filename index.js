@@ -38,3 +38,31 @@ function toggleMenu() {
     const navLinks = document.querySelector('.nav-links');
     navLinks.classList.toggle('show');
 }
+
+
+// 创建星星元素
+function createStar() {
+    const star = document.createElement('div');
+    star.className = 'star';
+
+    // 设置星星的随机初始位置和特性
+    star.style.left = Math.random() * 100 + 'vw'; // 随机横向位置
+    star.style.animationDuration = (Math.random() * 2 + 3) + 's'; // 动画持续时间：3-5秒
+    star.style.width = star.style.height = Math.random() * 4 + 2 + 'px'; // 随机大小
+    star.style.opacity = Math.random(); // 随机透明度
+
+    document.body.appendChild(star);
+
+    // 移除星星以防累积过多
+    setTimeout(() => {
+        star.remove();
+    }, 5000); // 5秒后清除
+}
+
+// 定时生成星星
+function startStarAnimation() {
+    setInterval(createStar, 200); // 每隔200ms生成一颗星星
+}
+
+// 等待页面加载完成后启动动画
+window.onload = startStarAnimation;
